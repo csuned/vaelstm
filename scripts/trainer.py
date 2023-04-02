@@ -12,6 +12,7 @@ from src.model.vae import BetaVAE
 from src.model.rnns import denselstm
 from utils.loaders import anomaly_loader, embedding_loader
 from torch.utils.data import DataLoader
+
 class MyVAE(nn.Module):
 
     def __init__(self, data_train, in_channels: int, latent_dim: int, hidden_dims = None, beta: int = 4, gamma: float = 1000., max_capacity: int = 25,

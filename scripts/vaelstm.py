@@ -9,7 +9,9 @@ import torch.nn as nn
 import numpy as np
 from trainer import MyVAE
 from trainer import MyLSTM
-from utils.loaders import produce_embeddings
+from utils.loaders import produce_embeddings, produce_outputs, produce_predicts, anomaly_loader
+from torch.utils.data import DataLoader
+
 
 class MyLSTMVAE(nn.Module):
     def __init__(self, data_train, data_test, code_config, in_channels: int, latent_dim: int, input_size: int, hidden_size:int, latent_size:int, num_layers:int,
@@ -42,11 +44,20 @@ class MyLSTMVAE(nn.Module):
         lstm_data_train['n_train_lstm'] = self.data_train.shape[0]
         lstm_data_train['n_test_lstm'] = self.data_test.shape[0]
         self.embedding_train, self.embedding_test = produce_embeddings(self.code_config, self.myvae, lstm_data_train)
+        self.gt_train, self.gt_test = produce_outputs(self.code_config, lstm_data_train)
         return
 
     def train_lstm(self):
-        self.mylstm = MyLSTM(self.embedding_train, self.input_size, self.hidden_size, self.latent_size, num_layers=self.num_layers, learning_rate=self.learning_rate,
-                             batch_size=self.batch_size)
+        self.mylstm = MyLSTM(self.embedding_train, self.input_size, self.hidden_size, self.latent_size, num_layers=self.num_layers, learning_rate=self.learning_rate, batch_size=self.batch_size)
         self.mylstm.train(self.num_epochs)
         self.loss_lstm_train, self.input_lstm_train, self.pred_lstm_train = self.mylstm.test(self.embedding_train, load_model=False)
         self.loss_lstm_test, self.input_lstm_test, self.pred_lstm_test = self.mylstm.test(self.embedding_test, load_model=False)
+        return
+    
+    def anomaly_detect(self):
+        self.reconst_pred = self.myvae.decode(self.pred_lstm_test)
+        
+        return
+        
+        
+        

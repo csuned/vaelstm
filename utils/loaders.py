@@ -15,8 +15,32 @@ def produce_embeddings(config, model_vae, data):
     return embedding_lstm_train, embedding_lstm_test
 
 def produce_predicts(config, embedding_lstm_train, embedding_lstm_test):
+    n_train = embedding_lstm_train.shape[0]
+    n_test = embedding_lstm_test.shape[0]
+    lstm_train_in = np.zeros((n_train-config['num_in'], config['l_seq']*config['num_in'], config['code_size']))
+    lstm_test_in = np.zeros((n_test-config['num_in'], config['l_seq']*config['num_in'], config['code_size']))
+    lstm_train_out = np.zeros((n_train-config['num_in'], config['l_seq'], config['code_size']))
+    lstm_test_out = np.zeros((n_test-config['num_in'], config['l_seq'], config['code_size']))
+    for i in range(n_train):
+        if i+config['num_in']<n_train:
+            for n in range(config['num_in']):
+                lstm_train_in[i, config['l_seq']*n:config['l_seq']*(n+1)] = embedding_lstm_train[i+n]
+            lstm_train_out[i] = embedding_lstm_train[i+config['num_in']]
+    for i in range(n_test):
+        if i+config['num_in']<n_test:
+            for n in range(config['num_in']):
+                lstm_test_in[i, config['l_seq']*n:config['l_seq']*(n+1)] = embedding_lstm_test[i+n]
+            lstm_test_out[i] = embedding_lstm_test[i+config['num_in']]
+    return lstm_train_in, lstm_test_in, lstm_train_out, lstm_test_out
 
-    return lstm_train_out, lstm_test_out
+def produce_outputs(config, data): #output of the decoder
+    batch_len = data['train_lstm'].shape[1]
+    channel_num = data['train_lstm'].shape[2]
+    eval_train_out = np.zeros((data['n_train_lstm']-config['num_in'], batch_len, channel_num))
+    eval_test_out = np.zeros((data['n_test_lstm']-config['num_in'], batch_len, channel_num))
+    eval_train_out = data['train_lstm'][config['num_in']:]
+    eval_test_out = data['test_lstm'][config['num_in']:]
+    return eval_train_out, eval_test_out
 
 def vae_training_data(batch_len, csv_file=None):
     trainingdata={}
