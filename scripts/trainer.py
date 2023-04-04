@@ -17,7 +17,7 @@ import wandb
 
 class MyVAE(nn.Module):
 
-    def __init__(self, data_train, in_channels: int, latent_dim: int, batchsize:int, total_batch: int, hidden_dims = None, beta: int = 4, gamma: float = 1000., max_capacity: int = 25, Capacity_max_iter: int = 1e4, loss_type: str = 'B', learning_rate=1e-4, batch_size=32, seq_len: int=48, device='cuda:0', use_wandb=True) -> None:
+    def __init__(self, data_train, in_channels: int, latent_dim: int, batchsize:int, total_batch: int, hidden_dims = None, beta: int = 4, gamma: float = 1., max_capacity: int = 25, Capacity_max_iter: int = 1e4, loss_type: str = 'B', learning_rate=1e-4, batch_size=32, seq_len: int=48, device='cuda:0', use_wandb=True) -> None:
         super(MyVAE, self).__init__()
 
         self.in_channels = in_channels
@@ -68,14 +68,14 @@ class MyVAE(nn.Module):
             recon_x, _, mu, logvar = self.b_vae(x)
             loss = self.b_vae.loss_function(recon_x, x, mu, logvar)
             if i>0:
-                out_loss = pt.cat((out_loss, loss['loss']), 0)
+                out_loss += [loss['loss'].item(),]
                 out_x = pt.cat((out_x, x), 0)
                 out_recon_x = pt.cat((out_recon_x, recon_x), 0)
             else:
-                out_loss = loss['loss']
+                out_loss = [loss['loss'].item(),]
                 out_x = x
                 out_recon_x = recon_x
-        return out_loss.cpu().detach().numpy(), out_x.cpu().detach().numpy(), out_recon_x.cpu().detach().numpy()
+        return out_loss, out_x.cpu().detach().numpy(), out_recon_x.cpu().detach().numpy()
 
     def load_model(self, path):
         self.b_vae.load_state_dict(pt.load(path))

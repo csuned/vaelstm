@@ -14,7 +14,7 @@ class BetaVAE(nn.Module):
                  total_batch: int,
                  hidden_dims = None,
                  beta: int = 4,
-                 gamma: float = 1000.,
+                 gamma: float = 1.,
                  max_capacity: int = 25,
                  Capacity_max_iter: int = 1e4,
                  loss_type: str = 'B',

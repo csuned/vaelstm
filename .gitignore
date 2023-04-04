@@ -1,0 +1,7 @@
+*.pdf
+*.pth
+*.jpg
+*.pt
+scripts/wandb/
+*.csv
+*.log

@@ -16,7 +16,7 @@ import pdb
 
 class MyLSTMVAE(nn.Module):
     
-    def __init__(self, data_train, data_test, code_config, total_batch, in_channels: int, latent_dim: int, input_size: int, hidden_size:int, latent_size:int, num_layers:int, hidden_dims = None, beta: int = 4, gamma: float = 1000., max_capacity: int = 25,
+    def __init__(self, data_train, data_test, code_config, total_batch, in_channels: int, latent_dim: int, input_size: int, hidden_size:int, latent_size:int, num_layers:int, hidden_dims = None, beta: int = 4, gamma: float = 1., max_capacity: int = 25,
 Capacity_max_iter: int = 1e4, loss_type: str = 'B', seq_len=48, learning_rate=1e-4, batch_size=32, num_epochs=100, device='cuda0') -> None:
         super(MyLSTMVAE, self).__init__()
         self.input_size = input_size
