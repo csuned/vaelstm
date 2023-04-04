@@ -1,1 +1,0 @@
-{"epoch_vae": 30, "_step": 3779, "_runtime": 45, "_timestamp": 1680565433, "KLD": 4.036038398742676, "accuracy": 0.013287235982716084, "loss_vae": 613961.6875, "epoch_lstm": 30, "loss_lstm": 0.10746480524539948}
