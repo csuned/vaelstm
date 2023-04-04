@@ -1,0 +1,15 @@
+2023-04-04 01:20:55,601 INFO    MainThread:2589930 [wandb_setup.py:_flush():70] setting env: {}
+2023-04-04 01:20:55,601 INFO    MainThread:2589930 [wandb_setup.py:_flush():70] multiprocessing start_methods=fork,spawn,forkserver
+2023-04-04 01:20:55,601 INFO    MainThread:2589930 [wandb_setup.py:_flush():70] setting login settings: {}
+2023-04-04 01:20:55,601 INFO    MainThread:2589930 [wandb_setup.py:_flush():70] setting login settings: {}
+2023-04-04 01:20:55,601 INFO    MainThread:2589930 [wandb_init.py:_log_setup():318] Logging user logs to /sata_disk/jupyter-chuanhao/chuanhao_anomaly/vaelstm/scripts/wandb/run-20230404_012055-3u0ovju9/logs/debug.log
+2023-04-04 01:20:55,601 INFO    MainThread:2589930 [wandb_init.py:_log_setup():319] Logging internal logs to /sata_disk/jupyter-chuanhao/chuanhao_anomaly/vaelstm/scripts/wandb/run-20230404_012055-3u0ovju9/logs/debug-internal.log
+2023-04-04 01:20:56,603 INFO    MainThread:2589930 [wandb_run.py:_console_start():1396] atexit reg
+2023-04-04 01:20:56,604 INFO    MainThread:2589930 [wandb_run.py:_redirect():1259] redirect: SettingsConsole.REDIRECT
+2023-04-04 01:20:56,605 INFO    MainThread:2589930 [wandb_run.py:_redirect():1264] Redirecting console.
+2023-04-04 01:20:56,605 INFO    MainThread:2589930 [redirect.py:install():213] install start
+2023-04-04 01:20:56,605 INFO    MainThread:2589930 [redirect.py:install():228] install stop
+2023-04-04 01:20:56,605 INFO    MainThread:2589930 [redirect.py:install():213] install start
+2023-04-04 01:20:56,605 INFO    MainThread:2589930 [redirect.py:install():228] install stop
+2023-04-04 01:20:56,605 INFO    MainThread:2589930 [wandb_run.py:_redirect():1310] Redirects installed.
+2023-04-04 01:21:17,370 INFO    MainThread:2589930 [wandb_run.py:finish():1053] finishing run sunchuanhao2/MyVAELSTM/3u0ovju9

@@ -1,0 +1,493 @@
+****Using Fake Training Data with Normal Distribution****
+****Using Fake Training Data with Normal Distribution****
+BetaVAE(
+  (encoder): Sequential(
+    (0): Sequential(
+      (0): Conv2d(2, 32, kernel_size=(3, 1), stride=(2, 1), padding=(1, 0))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+    )
+    (1): Sequential(
+      (0): Conv2d(32, 64, kernel_size=(3, 1), stride=(2, 1), padding=(1, 0))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+    )
+    (2): Sequential(
+      (0): Conv2d(64, 128, kernel_size=(3, 1), stride=(2, 1), padding=(1, 0))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+    )
+    (3): Sequential(
+      (0): Conv2d(128, 256, kernel_size=(3, 1), stride=(2, 1), padding=(1, 0))
+      (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (fc_mu): Linear(in_features=2304, out_features=2304, bias=True)
+  (fc_var): Linear(in_features=2304, out_features=2304, bias=True)
+  (decoder_input): Linear(in_features=2304, out_features=2304, bias=True)
+  (decoder): Sequential(
+    (0): Sequential(
+      (0): ConvTranspose2d(256, 128, kernel_size=(3, 1), stride=(2, 1), padding=(1, 0), output_padding=(1, 0))
+      (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+    )
+    (1): Sequential(
+      (0): ConvTranspose2d(128, 64, kernel_size=(3, 1), stride=(2, 1), padding=(1, 0), output_padding=(1, 0))
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+    )
+    (2): Sequential(
+      (0): ConvTranspose2d(64, 32, kernel_size=(3, 1), stride=(2, 1), padding=(1, 0), output_padding=(1, 0))
+      (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (final_layer): Sequential(
+    (0): ConvTranspose2d(32, 32, kernel_size=(3, 1), stride=(2, 1), padding=(1, 0), output_padding=(1, 0))
+    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Conv2d(32, 2, kernel_size=(3, 1), stride=(1, 1), padding=same)
+    (4): Tanh()
+  )
+)
+Epoch [1/30], Step [1/62], Loss: 293912704.0000
+Epoch [1/30], Step [11/62], Loss: 124054808.0000
+Epoch [1/30], Step [21/62], Loss: 20727892.0000
+Epoch [1/30], Step [31/62], Loss: 17583748.0000
+Epoch [1/30], Step [41/62], Loss: 10098481.0000
+Epoch [1/30], Step [51/62], Loss: 22270334.0000
+Epoch [1/30], Step [61/62], Loss: 18507412.0000
+Epoch [2/30], Step [1/62], Loss: 15194715.0000
+Epoch [2/30], Step [11/62], Loss: 4107007.0000
+Epoch [2/30], Step [21/62], Loss: 24576802.0000
+Epoch [2/30], Step [31/62], Loss: 18037684.0000
+Epoch [2/30], Step [41/62], Loss: 3856329.7500
+Epoch [2/30], Step [51/62], Loss: 4269955.0000
+Epoch [2/30], Step [61/62], Loss: 7792603.5000
+Epoch [3/30], Step [1/62], Loss: 5179585.0000
+Epoch [3/30], Step [11/62], Loss: 2787236.7500
+Epoch [3/30], Step [21/62], Loss: 9270976.0000
+Epoch [3/30], Step [31/62], Loss: 5671377.0000
+Epoch [3/30], Step [41/62], Loss: 1222701.8750
+Epoch [3/30], Step [51/62], Loss: 1785858.6250
+Epoch [3/30], Step [61/62], Loss: 2534058.0000
+Epoch [4/30], Step [1/62], Loss: 2882842.0000
+Epoch [4/30], Step [11/62], Loss: 895629.8750
+Epoch [4/30], Step [21/62], Loss: 4260982.5000
+Epoch [4/30], Step [31/62], Loss: 1540905.0000
+Epoch [4/30], Step [41/62], Loss: 2185026.7500
+Epoch [4/30], Step [51/62], Loss: 2322633.5000
+Epoch [4/30], Step [61/62], Loss: 2508835.5000
+Epoch [5/30], Step [1/62], Loss: 2842495.0000
+Epoch [5/30], Step [11/62], Loss: 1076662.5000
+Epoch [5/30], Step [21/62], Loss: 503768.0938
+Epoch [5/30], Step [31/62], Loss: 6371671.5000
+Epoch [5/30], Step [41/62], Loss: 289067.6250
+Epoch [5/30], Step [51/62], Loss: 1285465.5000
+Epoch [5/30], Step [61/62], Loss: 396731.3125
+Epoch [6/30], Step [1/62], Loss: 1364799.0000
+Epoch [6/30], Step [11/62], Loss: 213965.1406
+Epoch [6/30], Step [21/62], Loss: 1750801.0000
+Epoch [6/30], Step [31/62], Loss: 585078.0000
+Epoch [6/30], Step [41/62], Loss: 169243.7656
+Epoch [6/30], Step [51/62], Loss: 152716.8281
+Epoch [6/30], Step [61/62], Loss: 36359.7422
+Epoch [7/30], Step [1/62], Loss: 3170535.0000
+Epoch [7/30], Step [11/62], Loss: 3988979.7500
+Epoch [7/30], Step [21/62], Loss: 132205.6875
+Epoch [7/30], Step [31/62], Loss: 1012472.8750
+Epoch [7/30], Step [41/62], Loss: 801576.8750
+Epoch [7/30], Step [51/62], Loss: 1311430.1250
+Epoch [7/30], Step [61/62], Loss: 2850071.0000
+Epoch [8/30], Step [1/62], Loss: 725652.6875
+Epoch [8/30], Step [11/62], Loss: 455726.7500
+Epoch [8/30], Step [21/62], Loss: 147349.2500
+Epoch [8/30], Step [31/62], Loss: 942414.6250
+Epoch [8/30], Step [41/62], Loss: 61816.7070
+Epoch [8/30], Step [51/62], Loss: 617847.3125
+Epoch [8/30], Step [61/62], Loss: 1113584.7500
+Epoch [9/30], Step [1/62], Loss: 416892.8750
+Epoch [9/30], Step [11/62], Loss: 588997.5000
+Epoch [9/30], Step [21/62], Loss: 4088814.7500
+Epoch [9/30], Step [31/62], Loss: 28040.5430
+Epoch [9/30], Step [41/62], Loss: 703517.4375
+Epoch [9/30], Step [51/62], Loss: 547462.3750
+Epoch [9/30], Step [61/62], Loss: 102628.3672
+Epoch [10/30], Step [1/62], Loss: 227974.0781
+Epoch [10/30], Step [11/62], Loss: 517700.9062
+Epoch [10/30], Step [21/62], Loss: 881499.5000
+Epoch [10/30], Step [31/62], Loss: 107626.0938
+Epoch [10/30], Step [41/62], Loss: 350269.6875
+Epoch [10/30], Step [51/62], Loss: 390945.0625
+Epoch [10/30], Step [61/62], Loss: 191818.9688
+Epoch [11/30], Step [1/62], Loss: 552384.5000
+Epoch [11/30], Step [11/62], Loss: 1940358.0000
+Epoch [11/30], Step [21/62], Loss: 345865.7188
+Epoch [11/30], Step [31/62], Loss: 395770.6562
+Epoch [11/30], Step [41/62], Loss: 292987.0000
+Epoch [11/30], Step [51/62], Loss: 398268.9375
+Epoch [11/30], Step [61/62], Loss: 768862.5000
+Epoch [12/30], Step [1/62], Loss: 585351.0000
+Epoch [12/30], Step [11/62], Loss: 397950.0625
+Epoch [12/30], Step [21/62], Loss: 865755.8125
+Epoch [12/30], Step [31/62], Loss: 302928.8125
+Epoch [12/30], Step [41/62], Loss: 317122.4688
+Epoch [12/30], Step [51/62], Loss: 884638.5625
+Epoch [12/30], Step [61/62], Loss: 250687.0156
+Epoch [13/30], Step [1/62], Loss: 685141.5625
+Epoch [13/30], Step [11/62], Loss: 2188057.5000
+Epoch [13/30], Step [21/62], Loss: 1093516.6250
+Epoch [13/30], Step [31/62], Loss: 678347.5625
+Epoch [13/30], Step [41/62], Loss: 143743.1719
+Epoch [13/30], Step [51/62], Loss: 419609.3125
+Epoch [13/30], Step [61/62], Loss: 2063932.6250
+Epoch [14/30], Step [1/62], Loss: 21347.0625
+Epoch [14/30], Step [11/62], Loss: 1678936.0000
+Epoch [14/30], Step [21/62], Loss: 781015.1875
+Epoch [14/30], Step [31/62], Loss: 342177.2812
+Epoch [14/30], Step [41/62], Loss: 609986.5625
+Epoch [14/30], Step [51/62], Loss: 638491.1250
+Epoch [14/30], Step [61/62], Loss: 52477.8516
+Epoch [15/30], Step [1/62], Loss: 208901.6562
+Epoch [15/30], Step [11/62], Loss: 593639.6250
+Epoch [15/30], Step [21/62], Loss: 884321.4375
+Epoch [15/30], Step [31/62], Loss: 908597.6875
+Epoch [15/30], Step [41/62], Loss: 1342884.7500
+Epoch [15/30], Step [51/62], Loss: 485028.5000
+Epoch [15/30], Step [61/62], Loss: 741954.9375
+Epoch [16/30], Step [1/62], Loss: 1220815.6250
+Epoch [16/30], Step [11/62], Loss: 737918.5000
+Epoch [16/30], Step [21/62], Loss: 613141.7500
+Epoch [16/30], Step [31/62], Loss: 188775.7969
+Epoch [16/30], Step [41/62], Loss: 905268.4375
+Epoch [16/30], Step [51/62], Loss: 406534.6562
+Epoch [16/30], Step [61/62], Loss: 121958.7500
+Epoch [17/30], Step [1/62], Loss: 432595.2500
+Epoch [17/30], Step [11/62], Loss: 804264.3125
+Epoch [17/30], Step [21/62], Loss: 673588.2500
+Epoch [17/30], Step [31/62], Loss: 353761.6875
+Epoch [17/30], Step [41/62], Loss: 230808.9844
+Epoch [17/30], Step [51/62], Loss: 448126.0625
+Epoch [17/30], Step [61/62], Loss: 712493.8750
+Epoch [18/30], Step [1/62], Loss: 94243.0625
+Epoch [18/30], Step [11/62], Loss: 1651546.5000
+Epoch [18/30], Step [21/62], Loss: 1143189.3750
+Epoch [18/30], Step [31/62], Loss: 364468.8125
+Epoch [18/30], Step [41/62], Loss: 340915.4375
+Epoch [18/30], Step [51/62], Loss: 188269.6250
+Epoch [18/30], Step [61/62], Loss: 352596.2812
+Epoch [19/30], Step [1/62], Loss: 236438.2969
+Epoch [19/30], Step [11/62], Loss: 413217.3125
+Epoch [19/30], Step [21/62], Loss: 541074.5000
+Epoch [19/30], Step [31/62], Loss: 721860.4375
+Epoch [19/30], Step [41/62], Loss: 397883.1875
+Epoch [19/30], Step [51/62], Loss: 298437.1250
+Epoch [19/30], Step [61/62], Loss: 305768.7188
+Epoch [20/30], Step [1/62], Loss: 420349.8438
+Epoch [20/30], Step [11/62], Loss: 342743.6250
+Epoch [20/30], Step [21/62], Loss: 1218483.5000
+Epoch [20/30], Step [31/62], Loss: 107663.8828
+Epoch [20/30], Step [41/62], Loss: 124171.5078
+Epoch [20/30], Step [51/62], Loss: 1016130.9375
+Epoch [20/30], Step [61/62], Loss: 141803.2812
+Epoch [21/30], Step [1/62], Loss: 18524.6621
+Epoch [21/30], Step [11/62], Loss: 277368.0625
+Epoch [21/30], Step [21/62], Loss: 283806.5625
+Epoch [21/30], Step [31/62], Loss: 286019.5625
+Epoch [21/30], Step [41/62], Loss: 159800.5469
+Epoch [21/30], Step [51/62], Loss: 900870.3125
+Epoch [21/30], Step [61/62], Loss: 293390.0312
+Epoch [22/30], Step [1/62], Loss: 409362.5625
+Epoch [22/30], Step [11/62], Loss: 35252.5859
+Epoch [22/30], Step [21/62], Loss: 27948.3945
+Epoch [22/30], Step [31/62], Loss: 731274.1250
+Epoch [22/30], Step [41/62], Loss: 12329.8311
+Epoch [22/30], Step [51/62], Loss: 123409.2891
+Epoch [22/30], Step [61/62], Loss: 192595.0156
+Epoch [23/30], Step [1/62], Loss: 107316.9844
+Epoch [23/30], Step [11/62], Loss: 466348.6562
+Epoch [23/30], Step [21/62], Loss: 121935.8594
+Epoch [23/30], Step [31/62], Loss: 87102.4297
+Epoch [23/30], Step [41/62], Loss: 609725.9375
+Epoch [23/30], Step [51/62], Loss: 1873193.2500
+Epoch [23/30], Step [61/62], Loss: 95934.4062
+Epoch [24/30], Step [1/62], Loss: 1323782.2500
+Epoch [24/30], Step [11/62], Loss: 403133.1562
+Epoch [24/30], Step [21/62], Loss: 37673.2500
+Epoch [24/30], Step [31/62], Loss: 211276.5469
+Epoch [24/30], Step [41/62], Loss: 490614.9062
+Epoch [24/30], Step [51/62], Loss: 305168.3750
+Epoch [24/30], Step [61/62], Loss: 184109.4688
+Epoch [25/30], Step [1/62], Loss: 373305.3125
+Epoch [25/30], Step [11/62], Loss: 405645.3750
+Epoch [25/30], Step [21/62], Loss: 677885.7500
+Epoch [25/30], Step [31/62], Loss: 32556.7852
+Epoch [25/30], Step [41/62], Loss: 1472012.2500
+Epoch [25/30], Step [51/62], Loss: 546618.9375
+Epoch [25/30], Step [61/62], Loss: 526061.5625
+Epoch [26/30], Step [1/62], Loss: 96599.8359
+Epoch [26/30], Step [11/62], Loss: 19011.7520
+Epoch [26/30], Step [21/62], Loss: 1114812.6250
+Epoch [26/30], Step [31/62], Loss: 703957.3125
+Epoch [26/30], Step [41/62], Loss: 273457.0625
+Epoch [26/30], Step [51/62], Loss: 751183.0625
+Epoch [26/30], Step [61/62], Loss: 166327.0156
+Epoch [27/30], Step [1/62], Loss: 354370.5938
+Epoch [27/30], Step [11/62], Loss: 106642.5000
+Epoch [27/30], Step [21/62], Loss: 495008.2188
+Epoch [27/30], Step [31/62], Loss: 574706.0625
+Epoch [27/30], Step [41/62], Loss: 110835.0938
+Epoch [27/30], Step [51/62], Loss: 338088.7500
+Epoch [27/30], Step [61/62], Loss: 1631748.2500
+Epoch [28/30], Step [1/62], Loss: 94993.6094
+Epoch [28/30], Step [11/62], Loss: 130523.6953
+Epoch [28/30], Step [21/62], Loss: 382865.6562
+Epoch [28/30], Step [31/62], Loss: 1013820.6250
+Epoch [28/30], Step [41/62], Loss: 924243.4375
+Epoch [28/30], Step [51/62], Loss: 33896.4609
+Epoch [28/30], Step [61/62], Loss: 34727.5898
+Epoch [29/30], Step [1/62], Loss: 929227.1250
+Epoch [29/30], Step [11/62], Loss: 61708.4648
+Epoch [29/30], Step [21/62], Loss: 564920.4375
+Epoch [29/30], Step [31/62], Loss: 493752.0000
+Epoch [29/30], Step [41/62], Loss: 179282.2031
+Epoch [29/30], Step [51/62], Loss: 170917.5312
+Epoch [29/30], Step [61/62], Loss: 171318.5469
+Epoch [30/30], Step [1/62], Loss: 1087087.1250
+Epoch [30/30], Step [11/62], Loss: 466149.3438
+Epoch [30/30], Step [21/62], Loss: 732187.7500
+Epoch [30/30], Step [31/62], Loss: 337869.1562
+Epoch [30/30], Step [41/62], Loss: 381394.3750
+Epoch [30/30], Step [51/62], Loss: 452229.9688
+Epoch [30/30], Step [61/62], Loss: 1009830.9375
+denselstm(
+  (lstm): LSTM(256, 256, batch_first=True)
+  (fc): Linear(in_features=6912, out_features=2304, bias=True)
+)
+Epoch [1/30], Step [1/62], Loss: 0.7993
+Epoch [1/30], Step [11/62], Loss: 0.8018
+Epoch [1/30], Step [21/62], Loss: 0.8018
+Epoch [1/30], Step [31/62], Loss: 0.8017
+Epoch [1/30], Step [41/62], Loss: 0.8025
+Epoch [1/30], Step [51/62], Loss: 0.8016
+Epoch [1/30], Step [61/62], Loss: 0.8062
+Epoch [2/30], Step [1/62], Loss: 0.6959
+Epoch [2/30], Step [11/62], Loss: 0.6865
+Epoch [2/30], Step [21/62], Loss: 0.6781
+Epoch [2/30], Step [31/62], Loss: 0.6842
+Epoch [2/30], Step [41/62], Loss: 0.6875
+Epoch [2/30], Step [51/62], Loss: 0.6959
+Epoch [2/30], Step [61/62], Loss: 0.7072
+Epoch [3/30], Step [1/62], Loss: 0.5354
+Epoch [3/30], Step [11/62], Loss: 0.5412
+Epoch [3/30], Step [21/62], Loss: 0.5555
+Epoch [3/30], Step [31/62], Loss: 0.5549
+Epoch [3/30], Step [41/62], Loss: 0.5731
+Epoch [3/30], Step [51/62], Loss: 0.5726
+Epoch [3/30], Step [61/62], Loss: 0.5797
+Epoch [4/30], Step [1/62], Loss: 0.4262
+Epoch [4/30], Step [11/62], Loss: 0.4379
+Epoch [4/30], Step [21/62], Loss: 0.4358
+Epoch [4/30], Step [31/62], Loss: 0.4541
+Epoch [4/30], Step [41/62], Loss: 0.4630
+Epoch [4/30], Step [51/62], Loss: 0.4586
+Epoch [4/30], Step [61/62], Loss: 0.4726
+Epoch [5/30], Step [1/62], Loss: 0.3566
+Epoch [5/30], Step [11/62], Loss: 0.3529
+Epoch [5/30], Step [21/62], Loss: 0.3721
+Epoch [5/30], Step [31/62], Loss: 0.3784
+Epoch [5/30], Step [41/62], Loss: 0.3811
+Epoch [5/30], Step [51/62], Loss: 0.3851
+Epoch [5/30], Step [61/62], Loss: 0.3878
+Epoch [6/30], Step [1/62], Loss: 0.2969
+Epoch [6/30], Step [11/62], Loss: 0.3078
+Epoch [6/30], Step [21/62], Loss: 0.3123
+Epoch [6/30], Step [31/62], Loss: 0.3097
+Epoch [6/30], Step [41/62], Loss: 0.3261
+Epoch [6/30], Step [51/62], Loss: 0.3317
+Epoch [6/30], Step [61/62], Loss: 0.3320
+Epoch [7/30], Step [1/62], Loss: 0.2611
+Epoch [7/30], Step [11/62], Loss: 0.2707
+Epoch [7/30], Step [21/62], Loss: 0.2731
+Epoch [7/30], Step [31/62], Loss: 0.2737
+Epoch [7/30], Step [41/62], Loss: 0.2770
+Epoch [7/30], Step [51/62], Loss: 0.2822
+Epoch [7/30], Step [61/62], Loss: 0.2852
+Epoch [8/30], Step [1/62], Loss: 0.2342
+Epoch [8/30], Step [11/62], Loss: 0.2400
+Epoch [8/30], Step [21/62], Loss: 0.2439
+Epoch [8/30], Step [31/62], Loss: 0.2411
+Epoch [8/30], Step [41/62], Loss: 0.2431
+Epoch [8/30], Step [51/62], Loss: 0.2507
+Epoch [8/30], Step [61/62], Loss: 0.2511
+Epoch [9/30], Step [1/62], Loss: 0.2163
+Epoch [9/30], Step [11/62], Loss: 0.2181
+Epoch [9/30], Step [21/62], Loss: 0.2166
+Epoch [9/30], Step [31/62], Loss: 0.2171
+Epoch [9/30], Step [41/62], Loss: 0.2226
+Epoch [9/30], Step [51/62], Loss: 0.2229
+Epoch [9/30], Step [61/62], Loss: 0.2242
+Epoch [10/30], Step [1/62], Loss: 0.2009
+Epoch [10/30], Step [11/62], Loss: 0.2026
+Epoch [10/30], Step [21/62], Loss: 0.2007
+Epoch [10/30], Step [31/62], Loss: 0.2002
+Epoch [10/30], Step [41/62], Loss: 0.1992
+Epoch [10/30], Step [51/62], Loss: 0.2040
+Epoch [10/30], Step [61/62], Loss: 0.2024
+Epoch [11/30], Step [1/62], Loss: 0.1862
+Epoch [11/30], Step [11/62], Loss: 0.1868
+Epoch [11/30], Step [21/62], Loss: 0.1869
+Epoch [11/30], Step [31/62], Loss: 0.1858
+Epoch [11/30], Step [41/62], Loss: 0.1859
+Epoch [11/30], Step [51/62], Loss: 0.1879
+Epoch [11/30], Step [61/62], Loss: 0.1900
+Epoch [12/30], Step [1/62], Loss: 0.1789
+Epoch [12/30], Step [11/62], Loss: 0.1765
+Epoch [12/30], Step [21/62], Loss: 0.1756
+Epoch [12/30], Step [31/62], Loss: 0.1740
+Epoch [12/30], Step [41/62], Loss: 0.1769
+Epoch [12/30], Step [51/62], Loss: 0.1734
+Epoch [12/30], Step [61/62], Loss: 0.1754
+Epoch [13/30], Step [1/62], Loss: 0.1665
+Epoch [13/30], Step [11/62], Loss: 0.1683
+Epoch [13/30], Step [21/62], Loss: 0.1651
+Epoch [13/30], Step [31/62], Loss: 0.1649
+Epoch [13/30], Step [41/62], Loss: 0.1662
+Epoch [13/30], Step [51/62], Loss: 0.1648
+Epoch [13/30], Step [61/62], Loss: 0.1648
+Epoch [14/30], Step [1/62], Loss: 0.1616
+Epoch [14/30], Step [11/62], Loss: 0.1603
+Epoch [14/30], Step [21/62], Loss: 0.1575
+Epoch [14/30], Step [31/62], Loss: 0.1584
+Epoch [14/30], Step [41/62], Loss: 0.1571
+Epoch [14/30], Step [51/62], Loss: 0.1572
+Epoch [14/30], Step [61/62], Loss: 0.1561
+Epoch [15/30], Step [1/62], Loss: 0.1562
+Epoch [15/30], Step [11/62], Loss: 0.1530
+Epoch [15/30], Step [21/62], Loss: 0.1511
+Epoch [15/30], Step [31/62], Loss: 0.1515
+Epoch [15/30], Step [41/62], Loss: 0.1503
+Epoch [15/30], Step [51/62], Loss: 0.1492
+Epoch [15/30], Step [61/62], Loss: 0.1519
+Epoch [16/30], Step [1/62], Loss: 0.1500
+Epoch [16/30], Step [11/62], Loss: 0.1487
+Epoch [16/30], Step [21/62], Loss: 0.1466
+Epoch [16/30], Step [31/62], Loss: 0.1450
+Epoch [16/30], Step [41/62], Loss: 0.1456
+Epoch [16/30], Step [51/62], Loss: 0.1446
+Epoch [16/30], Step [61/62], Loss: 0.1443
+Epoch [17/30], Step [1/62], Loss: 0.1437
+Epoch [17/30], Step [11/62], Loss: 0.1429
+Epoch [17/30], Step [21/62], Loss: 0.1434
+Epoch [17/30], Step [31/62], Loss: 0.1409
+Epoch [17/30], Step [41/62], Loss: 0.1402
+Epoch [17/30], Step [51/62], Loss: 0.1391
+Epoch [17/30], Step [61/62], Loss: 0.1400
+Epoch [18/30], Step [1/62], Loss: 0.1403
+Epoch [18/30], Step [11/62], Loss: 0.1388
+Epoch [18/30], Step [21/62], Loss: 0.1392
+Epoch [18/30], Step [31/62], Loss: 0.1356
+Epoch [18/30], Step [41/62], Loss: 0.1365
+Epoch [18/30], Step [51/62], Loss: 0.1348
+Epoch [18/30], Step [61/62], Loss: 0.1355
+Epoch [19/30], Step [1/62], Loss: 0.1351
+Epoch [19/30], Step [11/62], Loss: 0.1352
+Epoch [19/30], Step [21/62], Loss: 0.1334
+Epoch [19/30], Step [31/62], Loss: 0.1328
+Epoch [19/30], Step [41/62], Loss: 0.1328
+Epoch [19/30], Step [51/62], Loss: 0.1329
+Epoch [19/30], Step [61/62], Loss: 0.1312
+Epoch [20/30], Step [1/62], Loss: 0.1330
+Epoch [20/30], Step [11/62], Loss: 0.1326
+Epoch [20/30], Step [21/62], Loss: 0.1318
+Epoch [20/30], Step [31/62], Loss: 0.1293
+Epoch [20/30], Step [41/62], Loss: 0.1285
+Epoch [20/30], Step [51/62], Loss: 0.1289
+Epoch [20/30], Step [61/62], Loss: 0.1292
+Epoch [21/30], Step [1/62], Loss: 0.1297
+Epoch [21/30], Step [11/62], Loss: 0.1281
+Epoch [21/30], Step [21/62], Loss: 0.1269
+Epoch [21/30], Step [31/62], Loss: 0.1255
+Epoch [21/30], Step [41/62], Loss: 0.1264
+Epoch [21/30], Step [51/62], Loss: 0.1255
+Epoch [21/30], Step [61/62], Loss: 0.1264
+Epoch [22/30], Step [1/62], Loss: 0.1291
+Epoch [22/30], Step [11/62], Loss: 0.1249
+Epoch [22/30], Step [21/62], Loss: 0.1255
+Epoch [22/30], Step [31/62], Loss: 0.1242
+Epoch [22/30], Step [41/62], Loss: 0.1247
+Epoch [22/30], Step [51/62], Loss: 0.1231
+Epoch [22/30], Step [61/62], Loss: 0.1232
+Epoch [23/30], Step [1/62], Loss: 0.1255
+Epoch [23/30], Step [11/62], Loss: 0.1229
+Epoch [23/30], Step [21/62], Loss: 0.1234
+Epoch [23/30], Step [31/62], Loss: 0.1224
+Epoch [23/30], Step [41/62], Loss: 0.1209
+Epoch [23/30], Step [51/62], Loss: 0.1198
+Epoch [23/30], Step [61/62], Loss: 0.1202
+Epoch [24/30], Step [1/62], Loss: 0.1206
+Epoch [24/30], Step [11/62], Loss: 0.1207
+Epoch [24/30], Step [21/62], Loss: 0.1219
+Epoch [24/30], Step [31/62], Loss: 0.1215
+Epoch [24/30], Step [41/62], Loss: 0.1184
+Epoch [24/30], Step [51/62], Loss: 0.1182
+Epoch [24/30], Step [61/62], Loss: 0.1173
+Epoch [25/30], Step [1/62], Loss: 0.1203
+Epoch [25/30], Step [11/62], Loss: 0.1183
+Epoch [25/30], Step [21/62], Loss: 0.1182
+Epoch [25/30], Step [31/62], Loss: 0.1177
+Epoch [25/30], Step [41/62], Loss: 0.1168
+Epoch [25/30], Step [51/62], Loss: 0.1165
+Epoch [25/30], Step [61/62], Loss: 0.1166
+Epoch [26/30], Step [1/62], Loss: 0.1190
+Epoch [26/30], Step [11/62], Loss: 0.1177
+Epoch [26/30], Step [21/62], Loss: 0.1158
+Epoch [26/30], Step [31/62], Loss: 0.1158
+Epoch [26/30], Step [41/62], Loss: 0.1158
+Epoch [26/30], Step [51/62], Loss: 0.1149
+Epoch [26/30], Step [61/62], Loss: 0.1141
+Epoch [27/30], Step [1/62], Loss: 0.1166
+Epoch [27/30], Step [11/62], Loss: 0.1153
+Epoch [27/30], Step [21/62], Loss: 0.1152
+Epoch [27/30], Step [31/62], Loss: 0.1143
+Epoch [27/30], Step [41/62], Loss: 0.1150
+Epoch [27/30], Step [51/62], Loss: 0.1126
+Epoch [27/30], Step [61/62], Loss: 0.1120
+Epoch [28/30], Step [1/62], Loss: 0.1146
+Epoch [28/30], Step [11/62], Loss: 0.1142
+Epoch [28/30], Step [21/62], Loss: 0.1133
+Epoch [28/30], Step [31/62], Loss: 0.1141
+Epoch [28/30], Step [41/62], Loss: 0.1130
+Epoch [28/30], Step [51/62], Loss: 0.1121
+Epoch [28/30], Step [61/62], Loss: 0.1117
+Epoch [29/30], Step [1/62], Loss: 0.1140
+Epoch [29/30], Step [11/62], Loss: 0.1126
+Epoch [29/30], Step [21/62], Loss: 0.1104
+Epoch [29/30], Step [31/62], Loss: 0.1111
+Epoch [29/30], Step [41/62], Loss: 0.1103
+Epoch [29/30], Step [51/62], Loss: 0.1098
+Epoch [29/30], Step [61/62], Loss: 0.1081
+Epoch [30/30], Step [1/62], Loss: 0.1113
+Epoch [30/30], Step [11/62], Loss: 0.1119
+Epoch [30/30], Step [21/62], Loss: 0.1096
+Epoch [30/30], Step [31/62], Loss: 0.1090
+Epoch [30/30], Step [41/62], Loss: 0.1084
+Epoch [30/30], Step [51/62], Loss: 0.1081
+Epoch [30/30], Step [61/62], Loss: 0.1073
+Traceback (most recent call last):
+  File "run_vae_lstm.py", line 84, in <module>
+    plt_compare_series([gt_test[:3], reconst[:3]], 'Predictions', label_list=['Ground Truth', 'Predictions'])
+  File "/home/jupyter-chuanhao/data/chuanhao_anomaly/vaelstm/utils/myplot.py", line 13, in plt_compare_series
+    fig, ax = plt.subplots(1,1,figuresize=(6,3))
+  File "/home/jupyter-chuanhao/.conda/envs/CG/lib/python3.8/site-packages/matplotlib/cbook/deprecation.py", line 451, in wrapper
+    return func(*args, **kwargs)
+  File "/home/jupyter-chuanhao/.conda/envs/CG/lib/python3.8/site-packages/matplotlib/pyplot.py", line 1287, in subplots
+    fig = figure(**fig_kw)
+  File "/home/jupyter-chuanhao/.conda/envs/CG/lib/python3.8/site-packages/matplotlib/pyplot.py", line 687, in figure
+    figManager = new_figure_manager(num, figsize=figsize,
+  File "/home/jupyter-chuanhao/.conda/envs/CG/lib/python3.8/site-packages/matplotlib/pyplot.py", line 315, in new_figure_manager
+    return _backend_mod.new_figure_manager(*args, **kwargs)
+  File "/home/jupyter-chuanhao/.conda/envs/CG/lib/python3.8/site-packages/matplotlib/backend_bases.py", line 3493, in new_figure_manager
+    fig = fig_cls(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'figuresize'

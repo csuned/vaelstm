@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "run_vae_lstm.py", line 63, in <module>
+    loss_vae_train, input_train, reconst_train, loss_vae_test, input_test, reconst_test = detector.train_vae()
+  File "/sata_disk/jupyter-chuanhao/chuanhao_anomaly/vaelstm/scripts/vaelstm.py", line 37, in train_vae
+    self.myvae.train(self.num_epochs)
+  File "/sata_disk/jupyter-chuanhao/chuanhao_anomaly/vaelstm/scripts/trainer.py", line 54, in train
+    wandb.log({"epoch": n_epochs + 1})
+NameError: name 'n_epochs' is not defined
